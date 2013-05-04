@@ -5,9 +5,6 @@ import java.util.List;
 import com.AndroidProject.dailyTracking.DBLayout.DataBaseHandler;
 import com.AndroidProject.dailyTracking.entities.Transaction;
 import com.AndroidProject.dailyTracking.entities.TransactionLogic;
-import com.example.dailytracking.R;
-import com.example.dailytracking.R.layout;
-import com.example.dailytracking.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;

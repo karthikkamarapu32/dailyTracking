@@ -4,10 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Random;
 import java.util.TimeZone;
 
-import com.AndroidProject.dailyTracking.LocationHistoryActivity;
 import com.AndroidProject.dailyTracking.entities.GPSTracker;
 
 import android.app.Service;
@@ -31,7 +29,6 @@ public class LocationTable extends Service
 	private SQLiteDatabase db;
 	private static final String tag = "TrackingService";
 	private int trackId;
-	private Intent mIntent;
 
 	public void onCreate() {
 		super.onCreate();
@@ -42,7 +39,6 @@ public class LocationTable extends Service
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) 
 	{
-		this.mIntent = intent;
 		insertDataBase();
 		return START_STICKY;
 	}

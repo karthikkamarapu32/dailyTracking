@@ -1,7 +1,5 @@
 package com.AndroidProject.dailyTracking;
 
-import com.example.dailytracking.R;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

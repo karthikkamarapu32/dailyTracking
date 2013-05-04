@@ -1,7 +1,7 @@
 package com.AndroidProject.dailyTracking;
 
 import com.AndroidProject.dailyTracking.DBLayout.DataBaseHandler;
-import com.example.dailytracking.R;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -24,7 +24,7 @@ public class TrackHistoryActivity extends Activity {
 		Button locHistoryButton = (Button)findViewById(R.id.Location);
 		locHistoryButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				Intent i = new Intent(TrackHistoryActivity.this, LocationHistoryActivity.class);
+				Intent i = new Intent(TrackHistoryActivity.this, LocHistoryMapActivity.class);
 				startActivity(i);
 			}
 		});

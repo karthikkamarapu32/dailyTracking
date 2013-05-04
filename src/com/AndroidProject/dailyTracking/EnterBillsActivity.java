@@ -4,7 +4,6 @@ import com.AndroidProject.dailyTracking.DBLayout.DataBaseHandler;
 import com.AndroidProject.dailyTracking.entities.GPSTracker;
 import com.AndroidProject.dailyTracking.entities.Location;
 import com.AndroidProject.dailyTracking.entities.Transaction;
-import com.example.dailytracking.R;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -12,7 +11,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class EnterBillsActivity extends Activity {
 

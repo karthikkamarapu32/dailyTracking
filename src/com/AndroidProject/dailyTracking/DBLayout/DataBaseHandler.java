@@ -8,7 +8,6 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimeZone;
 
-import com.AndroidProject.dailyTracking.LocationHistoryActivity;
 import com.AndroidProject.dailyTracking.entities.Location;
 import com.AndroidProject.dailyTracking.entities.Transaction;
 
@@ -16,7 +15,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 import android.widget.Toast;
 
 /* DataBaseHandler to retrieve values from DB */

@@ -5,7 +5,7 @@ import java.util.List;
 import com.AndroidProject.dailyTracking.DBLayout.DataBaseHandler;
 import com.AndroidProject.dailyTracking.entities.Location;
 import com.AndroidProject.dailyTracking.entities.LocationLogic;
-import com.example.dailytracking.R;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.widget.ArrayAdapter;

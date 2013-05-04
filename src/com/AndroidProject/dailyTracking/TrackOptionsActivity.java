@@ -3,7 +3,7 @@ package com.AndroidProject.dailyTracking;
 import java.util.Calendar;
 
 import com.AndroidProject.dailyTracking.services.LocationService;
-import com.example.dailytracking.R;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlarmManager;
