@@ -1,17 +1,18 @@
 package com.AndroidProject.dailyTracking;
 
 import com.AndroidProject.dailyTracking.DBLayout.DataBaseHandler;
+import com.AndroidProject.dailyTracking.entities.GPSTracker;
+import com.AndroidProject.dailyTracking.entities.Location;
 import com.AndroidProject.dailyTracking.entities.Transaction;
 import com.example.dailytracking.R;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class EnterBillsActivity extends Activity {
 
@@ -42,9 +43,17 @@ public class EnterBillsActivity extends Activity {
     	editText = (EditText) findViewById(R.id.billAmountValue);
     	double amount = Double.parseDouble(editText.getText().toString());
     	
-    	DataBaseHandler dbHandler = new DataBaseHandler(this);
-    	dbHandler.addTransaction(new Transaction(amount, store, category, null));
-    	dbHandler.close();
+    	Location location = null;
+    	if (TrackOptionsActivity.moneyEnabled) {
+    		GPSTracker gps = new GPSTracker(EnterBillsActivity.this);
+    		if (gps.LocationExists()) {
+    			location = new Location(0, gps.getLatitude(), gps.getLongitude(), null);
+    		}
+    	}
+    	
+    	DataBaseHandler dbh = new DataBaseHandler(this);
+    	dbh.addTransaction(new Transaction(0, amount, store, category, location, null));
+    	dbh.close();
     	
 	}
 

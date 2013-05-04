@@ -56,11 +56,23 @@ public class TrackHistoryActivity extends Activity {
 		return true;
 	}
 	
+	public void clearLocationHistory(View view) {
+		AlertDialog.Builder adb = new AlertDialog.Builder(this);
+		adb.setTitle("Clear History");
+		adb.setMessage("Are you sure you want to delete all of your location history?");
+		adb.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				DataBaseHandler dbh = new DataBaseHandler(TrackHistoryActivity.this);
+				dbh.clearLocationHistory();
+		        Toast.makeText(TrackHistoryActivity.this, "Location History Deleted", Toast.LENGTH_SHORT).show();
+		    }});
+		adb.setNegativeButton(android.R.string.no, null).show();
+	}
+	
 	public void clearSpendingHistory(View view) {
 		AlertDialog.Builder adb = new AlertDialog.Builder(this);
 		adb.setTitle("Clear History");
 		adb.setMessage("Are you sure you want to delete all of your spending history?");
-		//.setIcon(android.R.drawable.ic_dialog_alert)
 		adb.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				DataBaseHandler dbh = new DataBaseHandler(TrackHistoryActivity.this);

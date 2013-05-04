@@ -20,6 +20,18 @@
         android:layout_marginTop="39dp"
         android:layout_centerVertical="true"
         android:text="Location History" />
+    
+    <Button
+        android:id="@+id/ClearLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Location"
+        android:layout_alignRight="@+id/Location"
+        android:layout_below="@+id/Location"
+        android:layout_marginTop="24dp"
+        android:layout_centerVertical="true"
+        android:onClick="clearLocationHistory"
+        android:text="Delete Location History" />
 
     <Button
         android:id="@+id/Picture"
@@ -27,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Location"
         android:layout_alignRight="@+id/Location"
-        android:layout_below="@+id/Location"
+        android:layout_below="@+id/ClearLocation"
         android:layout_marginTop="24dp"
         android:layout_centerVertical="true"
         android:text="Picture History" />

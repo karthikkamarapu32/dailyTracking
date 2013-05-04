@@ -1,23 +1,18 @@
 package com.AndroidProject.dailyTracking;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.AndroidProject.dailyTracking.DBLayout.DataBaseHandler;
+import com.AndroidProject.dailyTracking.entities.Location;
+import com.AndroidProject.dailyTracking.entities.LocationLogic;
 import com.example.dailytracking.R;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 /* The Activity displays Location history of the App */ 
-public class LocationHistoryActivity extends Activity 
-{
-
-	/* Declartion of local variables */
-	private ListView listView;
-	public static ArrayList<String> ArrayofName = new ArrayList<String>();
-
+public class LocationHistoryActivity extends Activity {
 
 	/** Called when the activity is first created. */
 	@Override
@@ -29,13 +24,14 @@ public class LocationHistoryActivity extends Activity
 		/* Initialize DataBase Handler and call getAllLocations()
 		 * which gets all the locations */
 		DataBaseHandler db = new DataBaseHandler(this);
-		db.getAllLocations();
+		List<Location> locations = db.getAllLocations();
+		List<String> arrayOfNames = LocationLogic.getList(locations);
 
 		/* List View which displays all the locations */
-		listView = (ListView) findViewById(R.id.listView1);
+		ListView listView = (ListView) findViewById(R.id.listView1);
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, ArrayofName);
+				android.R.layout.simple_list_item_1, arrayOfNames);
 
 		listView.setAdapter(adapter);
 

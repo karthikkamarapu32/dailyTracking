@@ -48,7 +48,7 @@ public class LocationService extends Service {
 			Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
 			
 			DataBaseHandler dbh = new DataBaseHandler(LocationService.this);
-			dbh.addLocation(new Location(latitude, longitude, null));
+			dbh.addLocation(new Location(0, latitude, longitude, null));
 			dbh.close();
 		}
 		

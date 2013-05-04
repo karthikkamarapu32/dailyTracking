@@ -26,7 +26,7 @@ public class TrackOptionsActivity extends Activity
 	/* Declaration of local variables */
 	private static boolean locationEnabled = false;
 	private static boolean pictureEnabled = false;
-	private static boolean moneyEnabled = false;
+	protected static boolean moneyEnabled = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
