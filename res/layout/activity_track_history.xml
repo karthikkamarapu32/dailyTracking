@@ -15,9 +15,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="77dp"
-        android:layout_marginRight="58dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_marginTop="39dp"
+        android:layout_centerVertical="true"
         android:text="Location History" />
 
     <Button
@@ -28,16 +29,31 @@
         android:layout_alignRight="@+id/Location"
         android:layout_below="@+id/Location"
         android:layout_marginTop="24dp"
+        android:layout_centerVertical="true"
         android:text="Picture History" />
-
+    
     <Button
         android:id="@+id/Money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Picture"
+        android:layout_alignLeft="@+id/Location"
         android:layout_alignRight="@+id/Location"
+        android:layout_below="@+id/Picture"
+        android:layout_marginTop="24dp"
         android:layout_centerVertical="true"
         android:text="View Spending History" />
+
+    <Button
+        android:id="@+id/ClearMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Location"
+        android:layout_alignRight="@+id/Location"
+        android:layout_below="@+id/Money"
+        android:layout_marginTop="24dp"
+        android:layout_centerVertical="true"
+        android:onClick="clearSpendingHistory"
+        android:text="Delete Spending History" />
 
     <Button
         android:id="@+id/Back"
@@ -45,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Money"
         android:layout_alignRight="@+id/Money"
-        android:layout_below="@+id/Money"
+        android:layout_below="@+id/ClearMoney"
         android:layout_marginTop="24dp"
         android:text="Back" />
 
