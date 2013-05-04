@@ -28,53 +28,49 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Back=0x7f090018;
-        public static final int Location=0x7f090015;
-        public static final int Money=0x7f090017;
-        public static final int Picture=0x7f090016;
+        public static final int Back=0x7f090014;
+        public static final int Location=0x7f090011;
+        public static final int Money=0x7f090013;
+        public static final int Picture=0x7f090012;
         public static final int StoreName=0x7f090002;
-        public static final int action_settings=0x7f09002e;
+        public static final int action_settings=0x7f09002a;
         public static final int billAmountTableRow=0x7f090007;
         public static final int billAmountTextView=0x7f090008;
         public static final int billAmountValue=0x7f090009;
-        public static final int cancelValue=0x7f09000f;
+        public static final int cancelValue=0x7f09000b;
         public static final int categorySpin=0x7f090006;
         public static final int categoryTableRow=0x7f090004;
         public static final int catogoryTextView=0x7f090005;
-        public static final int dailyTrackerTextView=0x7f090013;
-        public static final int dateOfBillTableRow=0x7f09000a;
-        public static final int dateText=0x7f09000c;
-        public static final int dateValue=0x7f09000b;
-        public static final int editValue=0x7f09000e;
-        public static final int editValues=0x7f09002d;
-        public static final int enterBillValue=0x7f090012;
-        public static final int history=0x7f090010;
-        public static final int listView1=0x7f090014;
-        public static final int locationDisableButton=0x7f09001d;
-        public static final int locationEnableButton=0x7f09001c;
-        public static final int locationRadioButton=0x7f09001b;
-        public static final int locationTextView=0x7f09001a;
-        public static final int moneyDosableButton=0x7f090026;
-        public static final int moneyEnableButton=0x7f090025;
-        public static final int moneyTableRow=0x7f090023;
-        public static final int moneyTextView=0x7f090024;
-        public static final int pictureDisableButton=0x7f090022;
-        public static final int pictureEnableButton=0x7f090021;
-        public static final int pictureRadioButton=0x7f090020;
-        public static final int pictureTableRow=0x7f09001e;
-        public static final int pictureTextView=0x7f09001f;
-        public static final int saveTableRow=0x7f090027;
-        public static final int saveValue=0x7f09000d;
-        public static final int saveValues=0x7f090011;
+        public static final int dailyTrackerTextView=0x7f09000f;
+        public static final int editValues=0x7f090029;
+        public static final int enterBillValue=0x7f09000e;
+        public static final int history=0x7f09000c;
+        public static final int listView1=0x7f090010;
+        public static final int locationDisableButton=0x7f090019;
+        public static final int locationEnableButton=0x7f090018;
+        public static final int locationRadioButton=0x7f090017;
+        public static final int locationTextView=0x7f090016;
+        public static final int moneyDosableButton=0x7f090022;
+        public static final int moneyEnableButton=0x7f090021;
+        public static final int moneyTableRow=0x7f09001f;
+        public static final int moneyTextView=0x7f090020;
+        public static final int pictureDisableButton=0x7f09001e;
+        public static final int pictureEnableButton=0x7f09001d;
+        public static final int pictureRadioButton=0x7f09001c;
+        public static final int pictureTableRow=0x7f09001a;
+        public static final int pictureTextView=0x7f09001b;
+        public static final int saveTableRow=0x7f090023;
+        public static final int saveValue=0x7f09000a;
+        public static final int saveValues=0x7f09000d;
         public static final int storeNameValue=0x7f090003;
         public static final int storeNametableRow=0x7f090001;
         public static final int tableLayout1=0x7f090000;
-        public static final int tableRow1=0x7f090019;
-        public static final int tableRow2=0x7f090029;
-        public static final int tableRow3=0x7f09002b;
-        public static final int textView1=0x7f090028;
-        public static final int textView2=0x7f09002a;
-        public static final int textView3=0x7f09002c;
+        public static final int tableRow1=0x7f090015;
+        public static final int tableRow2=0x7f090025;
+        public static final int tableRow3=0x7f090027;
+        public static final int textView1=0x7f090024;
+        public static final int textView2=0x7f090026;
+        public static final int textView3=0x7f090028;
     }
     public static final class layout {
         public static final int activity_enter_bills=0x7f030000;
@@ -82,7 +78,8 @@ public final class R {
         public static final int activity_location_history=0x7f030002;
         public static final int activity_track_history=0x7f030003;
         public static final int activity_tracking_options=0x7f030004;
-        public static final int monetary_track_page=0x7f030005;
+        public static final int activity_transaction_history=0x7f030005;
+        public static final int monetary_track_page=0x7f030006;
     }
     public static final class menu {
         public static final int enter_bills=0x7f080000;
@@ -91,6 +88,7 @@ public final class R {
         public static final int main2=0x7f080003;
         public static final int main_activity3=0x7f080004;
         public static final int track_history=0x7f080005;
+        public static final int transaction_history=0x7f080006;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -98,6 +96,8 @@ public final class R {
         public static final int billAmount=0x7f050007;
         public static final int cancel=0x7f05000a;
         public static final int category=0x7f050006;
+        public static final int confirm_clear_history=0x7f050013;
+        public static final int confirm_clear_trans_history=0x7f050014;
         public static final int date=0x7f05000e;
         public static final int done=0x7f05000b;
         public static final int edit=0x7f050009;
@@ -111,6 +111,7 @@ public final class R {
         public static final int title_activity_main2=0x7f050003;
         public static final int title_activity_main_activity3=0x7f050004;
         public static final int title_activity_track_history=0x7f050011;
+        public static final int title_activity_transaction_history=0x7f050012;
     }
     public static final class style {
         /** 

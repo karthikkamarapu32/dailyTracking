@@ -46,6 +46,10 @@
             android:name="com.AndroidProject.dailyTracking.TrackHistoryActivity"
             android:label="@string/title_activity_track_history" >
         </activity>
+        <activity
+            android:name="com.AndroidProject.dailyTracking.TransactionHistoryActivity"
+            android:label="@string/title_activity_transaction_history" >
+        </activity>
     </application>
 
 </manifest>

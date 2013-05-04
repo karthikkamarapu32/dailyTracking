@@ -18,7 +18,7 @@
         android:layout_marginLeft="77dp"
         android:layout_marginRight="58dp"
         android:layout_marginTop="39dp"
-        android:text="Location" />
+        android:text="Location History" />
 
     <Button
         android:id="@+id/Picture"
@@ -28,7 +28,7 @@
         android:layout_alignRight="@+id/Location"
         android:layout_below="@+id/Location"
         android:layout_marginTop="24dp"
-        android:text="Picture" />
+        android:text="Picture History" />
 
     <Button
         android:id="@+id/Money"
@@ -37,7 +37,7 @@
         android:layout_alignLeft="@+id/Picture"
         android:layout_alignRight="@+id/Location"
         android:layout_centerVertical="true"
-        android:text="Money" />
+        android:text="View Spending History" />
 
     <Button
         android:id="@+id/Back"

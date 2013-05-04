@@ -1,41 +1,37 @@
 package com.AndroidProject.dailyTracking.entities;
 
-import java.sql.Time;
-
 public class Transaction {
 	
 	private double amount;
-	private String comment;
-	private Time time;
-	private int latitude;
-	private int longitude;
+	private String store;
+	private String category;
+	private String time;
 	
-	public Transaction(double amount, String comment, Time time, int latitude, int longitude) {
+	public Transaction(double amount, String store, String category, String time) {
 		this.amount = amount;
-		this.comment = comment;
+		this.store = store;
+		this.category = category;
 		this.time = time;
-		this.latitude = latitude;
-		this.longitude = longitude;
 	}
 	
 	public double getAmount() {
 		return this.amount;
 	}
 	
-	public String getComment() {
-		return this.comment;
+	public String getStore() {
+		return this.store;
 	}
 	
-	public Time getTime() {
+	public String getCategory() {
+		return this.category;
+	}
+	
+	public String getTime() {
 		return this.time;
 	}
 	
-	public int getLatitude() {
-		return this.latitude;
-	}
-	
-	public int getLongitude() {
-		return this.longitude;
+	public String toString() {
+		return "$" + this.amount + " at " + this.store + " on " + this.time + " for " + this.category;
 	}
 	
 }

@@ -79,27 +79,6 @@
                 android:ems="10"
                 android:inputType="numberDecimal" />
         </TableRow>
-
-        <TableRow
-            android:id="@+id/dateOfBillTableRow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/dateValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/date"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <EditText
-                android:id="@+id/dateText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="date" />
-
-        </TableRow>
     </TableLayout>
 
     <Button
@@ -109,24 +88,16 @@
         android:layout_alignLeft="@+id/tableLayout1"
         android:layout_below="@+id/tableLayout1"
         android:layout_marginTop="36dp"
+        android:onClick="onSubmit"
         android:text="@string/save" />
-
-    <Button
-        android:id="@+id/editValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/saveValue"
-        android:layout_alignBottom="@+id/saveValue"
-        android:layout_toRightOf="@+id/saveValue"
-        android:text="@string/edit" />
 
     <Button
         android:id="@+id/cancelValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editValue"
-        android:layout_alignBottom="@+id/editValue"
-        android:layout_toRightOf="@+id/editValue"
+        android:layout_alignBaseline="@+id/saveValue"
+        android:layout_alignBottom="@+id/saveValue"
+        android:layout_toRightOf="@+id/saveValue"
         android:text="@string/cancel" />
 
 </RelativeLayout>
