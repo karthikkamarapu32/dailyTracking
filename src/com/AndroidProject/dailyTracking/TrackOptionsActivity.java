@@ -2,7 +2,7 @@ package com.AndroidProject.dailyTracking;
 
 import java.util.Calendar;
 
-import com.AndroidProject.dailyTracking.DBLayout.LocationTable;
+import com.AndroidProject.dailyTracking.services.LocationService;
 import com.example.dailytracking.R;
 import android.os.Bundle;
 import android.app.Activity;
@@ -189,7 +189,7 @@ public class TrackOptionsActivity extends Activity
 				AlarmManager alarm = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 				Calendar cal = Calendar.getInstance();
 				Intent intent = new Intent();
-				intent.setClass(getApplicationContext(),LocationTable.class);
+				intent.setClass(getApplicationContext(),LocationService.class);
 				PendingIntent pintent = PendingIntent.getService(getApplicationContext(), 0, intent, 0);
 
 				/* Set Alarm if radio Button for location Enabled is set to true */
@@ -201,7 +201,7 @@ public class TrackOptionsActivity extends Activity
 				else if(locationEnabled == false)
 				{
 					alarm.cancel(pintent);
-					stopService(new Intent(TrackOptionsActivity.this, LocationTable.class));
+					stopService(new Intent(TrackOptionsActivity.this, LocationService.class));
 				}
 
 				/* After all the actions are done,

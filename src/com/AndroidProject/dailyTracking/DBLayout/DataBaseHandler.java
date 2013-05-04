@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import com.AndroidProject.dailyTracking.LocationHistoryActivity;
-import com.AndroidProject.dailyTracking.entities.Locations;
+import com.AndroidProject.dailyTracking.entities.Location;
 import com.AndroidProject.dailyTracking.entities.Transaction;
 
 import android.content.Context;
@@ -29,7 +29,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 	private static final String TIME_TABLE_NAME = "TIME";
 	private static final String TRANSACTION_TABLE_NAME = "BILLS";
 	private final DateFormat timestampFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-	private Context c;
 
 	public DataBaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -61,13 +60,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 	
 	public void addTransaction(Transaction transaction) {
 		
-		/* Get the time Component */	
-		GregorianCalendar greg = new GregorianCalendar();
-		TimeZone tz = greg.getTimeZone();
-		int offset = tz.getOffset(System.currentTimeMillis());
-		greg.add(Calendar.SECOND, (offset / 1000) * -1);
-		
-		SQLiteDatabase db = this.getWritableDatabase();
 		int curID = this.getCurID();
 		
 		/* Insert Query for TRANSACTION Table */		        
@@ -82,8 +74,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 		String insertTimeQuery = "INSERT INTO " + TIME_TABLE_NAME +
 				" (TRACK_ID,TIME_STAMP) VALUES " +
 				"( " + "'" + String.valueOf(curID) + "','" +
-				timestampFormat.format(greg.getTime()) + "');";
-
+				this.getCurTime() + "');";
+		
+		SQLiteDatabase db = this.getWritableDatabase();
 		/* Execute the Queries */
 		db.execSQL(insertTransQuery);
 		db.execSQL(insertTimeQuery);
@@ -123,6 +116,29 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 				" (TRACK_ID VARCHAR, AMOUNT DOUBLE, STORE VARCHAR, CATEGORY VARCHAR);";
 		db.execSQL(transQuery);
 	}
+	
+	public void addLocation(Location location) {
+		
+		int curID = this.getCurID();
+		
+		/* Insert Query for LOCATION Table */		        
+		String insertLocQuery = "INSERT INTO " + LOC_TABLE_NAME +
+				" (TRACK_ID,LAT,LON) VALUES (" + "'" +
+				String.valueOf(curID) + "','" +
+				location.getLat() + "','" +
+				location.getLon() + "');";
+
+		/* Insert Query for TIME Table */
+		String insertTimeQuery = "INSERT INTO " + TIME_TABLE_NAME +
+				" (TRACK_ID,TIME_STAMP) VALUES " +
+				"( " + "'" + String.valueOf(curID) + "','" +
+				this.getCurTime() + "');";
+		
+		SQLiteDatabase db = this.getWritableDatabase();
+		/* Execute the Queries */
+		db.execSQL(insertLocQuery);
+		db.execSQL(insertTimeQuery);
+	}
 
 	// Getting All Locations
 	public void getAllLocations() {
@@ -147,7 +163,19 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 		} 
 	}
 	
+	private String getCurTime() {
+		
+		/* Get the time Component */	
+		GregorianCalendar greg = new GregorianCalendar();
+		TimeZone tz = greg.getTimeZone();
+		int offset = tz.getOffset(System.currentTimeMillis());
+		greg.add(Calendar.SECOND, (offset / 1000) * -1);
+		return timestampFormat.format(greg.getTime());
+		
+	}
+	
 	private int getCurID() {
+		
 		/* Select Query to get maximum TrackId from TIME Table.
 		 * This is also the recent one.
 		 */
@@ -168,5 +196,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 				return Integer.parseInt(maxTrackId) + 1;
 		}
 		return 1;
+		
 	}
 }

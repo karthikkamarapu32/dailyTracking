@@ -40,6 +40,7 @@
         </activity>
 
         <service android:name="com.AndroidProject.dailyTracking.DBLayout.LocationTable" />
+        <service android:name="com.AndroidProject.dailyTracking.services.LocationService" />
         <service android:name="com.AndroidProject.dailytracking.entities.GPSTracker" />
 
         <activity
