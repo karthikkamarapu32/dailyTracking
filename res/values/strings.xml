@@ -32,5 +32,9 @@
     <string name="title_activity_transaction_history">Transaction History</string>
     <string name="confirm_clear_history">Clear History</string>
     <string name="confirm_clear_trans_history">Are you sure you want to delete all of you spending history (cannot be undone)?</string>
+    <string name="title_activity_loc_history_map">Location History</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_baller">Baller</string>
+    <string name="title_activity_trans_history_map">TransHistoryMapActivity</string>
 
 </resources>

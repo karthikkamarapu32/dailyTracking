@@ -47,10 +47,13 @@ public class Transaction {
 	}
 	
 	public String toString() {
-		StringBuffer sb = new StringBuffer("$" + this.amount + " at " + this.store + " on " + this.time + " for " + this.category);
+		StringBuffer sb = new StringBuffer();
+		sb.append("Amount: " + this.amount + "\n");
+		sb.append("Store: " + this.store + "\n");
+		sb.append("Category: " + this.category + "\n");
+		sb.append("Time: " + this.time + "\n");
 		if (this.location != null) {
-			sb.append("\nLatitude: " + this.location.getLat());
-			sb.append("\nLongitude: " + this.location.getLon());
+			sb.append("\n<b>Click for Location</b>");
 		}
 		return sb.toString();
 	}
